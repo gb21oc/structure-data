@@ -20,7 +20,6 @@ class Pilha{
         const newPilha: (typeof this.pilha) = []
         const lastElement = this.pilha[this.index]
         for(const item of this.pilha){
-            console.log(count, this.index)
             if(count !== this.index) {
                 newPilha[count] = item
             }
