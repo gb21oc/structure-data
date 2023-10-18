@@ -1,8 +1,13 @@
 class Pilha{
     private index: number = 0
+    private fullCount: number = 10
     private _pilha: unknown[] = []
 
     push(item: string){
+        if(this.fullCount === this.index){
+            console.log("Stack is full")
+            return
+        }
         this._pilha[this.index] = item
         this.index++
     }
@@ -39,6 +44,13 @@ firstPilha.push("carro 02")
 firstPilha.push("carro 03")
 firstPilha.push("carro 04")
 firstPilha.push("carro 05")
-console.log(firstPilha.pilha + " => " + firstPilha.length())
+firstPilha.push("carro 06")
+firstPilha.push("carro 07")
+firstPilha.push("carro 08")
+firstPilha.push("carro 09")
+firstPilha.push("carro 10")
+firstPilha.push("carro 11")
+console.log(firstPilha.pilha)
+/* console.log(firstPilha.pilha + " => " + firstPilha.length())
 const last = firstPilha.pop()
-console.log(firstPilha.pilha + " => " + firstPilha.length() + " => "+ last)
+console.log(firstPilha.pilha + " => " + firstPilha.length() + " => "+ last) */
