@@ -1,7 +1,7 @@
 class Pilha{
     private index: number = 0
     private fullCount: number = 10
-    private _pilha: unknown[] = []
+    private _pilha: string[] = []
 
     push(item: string){
         if(this.fullCount === this.index){
@@ -13,8 +13,25 @@ class Pilha{
     }
 
     pop(){
+        if(this.index === 0) return undefined
+
+        this.index--
         let count = 0
-        const newPilha: unknown[] = []
+        const newPilha: (typeof this.pilha) = []
+        const lastElement = this.pilha[this.index]
+        for(const item of this.pilha){
+            console.log(count, this.index)
+            if(count !== this.index) {
+                newPilha[count] = item
+            }
+            count ++
+        }
+        this._pilha = newPilha
+        return lastElement
+        
+        /* // * OLD
+        let count = 0
+        const newPilha: (typeof this.pilha) = []
         let lastElement;
         if(this.index !== 0){
             for(const item of this.pilha){
@@ -26,7 +43,7 @@ class Pilha{
             this._pilha = newPilha
             this.index--
             return lastElement
-        }
+        } */
     }
 
     length(){
@@ -45,11 +62,12 @@ firstPilha.push("carro 03")
 firstPilha.push("carro 04")
 firstPilha.push("carro 05")
 firstPilha.push("carro 06")
-firstPilha.push("carro 07")
+firstPilha.push("carro 08")
 firstPilha.push("carro 08")
 firstPilha.push("carro 09")
-firstPilha.push("carro 10")
-firstPilha.push("carro 11")
+firstPilha.push("carro 08")
+//firstPilha.push("carro 11")
+firstPilha.pop()
 console.log(firstPilha.pilha)
 /* console.log(firstPilha.pilha + " => " + firstPilha.length())
 const last = firstPilha.pop()
