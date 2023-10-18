@@ -1,6 +1,6 @@
 
 /**
- * Using type simple queue 
+ * Using type fixed-size circular queues
  */
 class Queue{
     private index: number = 0
